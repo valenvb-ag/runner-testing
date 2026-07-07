@@ -12,11 +12,12 @@ jobs:
     steps:
       - name: Print hello world
         run: echo "Hello, world from a container!"
-      - run: sleep 30
-  fail:
-    runs-on: self-hosted
-    container:
-      image: node:24
-    steps:
-      - run: exit 1
+      - run: sleep 180
+      - run: echo "never see me!"
+  # fail:
+  #   runs-on: self-hosted
+  #   container:
+  #     image: node:24
+  #   steps:
+  #     - run: exit 1
       
