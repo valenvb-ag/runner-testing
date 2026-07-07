@@ -4,16 +4,19 @@ on:
   workflow_dispatch:
   push:
 
+env:
+  ACTIONS_STEP_DEBUG: true
+
 jobs:
   hello:
     runs-on: self-hosted
     container:
       image: node:24
     steps:
-      - name: Print hello world
-        run: echo "Hello, world from a container!"
-      - run: sleep 180
-      - run: echo "never see me!"
+      - run: | 
+          echo starting sleep
+          sleep 180
+          echo "never see me!"
   # fail:
   #   runs-on: self-hosted
   #   container:
