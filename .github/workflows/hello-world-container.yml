@@ -15,8 +15,10 @@ jobs:
     steps:
       - run: | 
           echo starting sleep
-          sleep 180
+          sleep 60
           echo "never see me!"
+          exit 1
+      - run: echo "this step should never run!"
   # fail:
   #   runs-on: self-hosted
   #   container:
