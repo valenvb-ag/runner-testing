@@ -1,0 +1,15 @@
+name: Hello World Container
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  hello:
+    runs-on: self-hosted
+    container:
+      image: node:24
+    steps:
+      - name: Print hello world
+        run: echo "Hello, world from a container!"
+      - run: sleep 30
