@@ -19,10 +19,4 @@ jobs:
           echo "never see me!"
           exit 1
       - run: echo "this step should never run!"
-  # fail:
-  #   runs-on: self-hosted
-  #   container:
-  #     image: node:24
-  #   steps:
-  #     - run: exit 1
       
