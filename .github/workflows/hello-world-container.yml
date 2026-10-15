@@ -14,9 +14,11 @@ jobs:
       image: node:24
     steps:
       - run: | 
-          echo starting sleep
-          sleep 60
-          echo "never see me!"
-          exit 1
+          echo "START $(date -u +%H:%M:%S)"
+          for i in $(seq 1 240); do
+            printf '%s line-%04d\n' "$(date -u +%H:%M:%S)" "$i"
+            sleep 0.5
+          done
+          echo "END $(date -u +%H:%M:%S)"
       - run: echo "this step should never run!"
       
